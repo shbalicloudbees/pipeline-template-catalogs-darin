@@ -6,16 +6,12 @@ agent {
 kind: Pod
 spec:
   containers:
-    - name: maven
-      image: maven:3.5.4-jdk-8-slim
-      command: ["tail", "-f", "/dev/null"]  
-      imagePullPolicy: Always 
-      resources:  
-        requests:
-          memory: "1Gi"
-          cpu: "500m"
-        limits:
-          memory: "1Gi"
+      - name: maven
+        image: maven:3.3.9-jdk-8-alpine
+        command:
+        - cat
+        tty: true
+        env:          
 """
     }
   }
